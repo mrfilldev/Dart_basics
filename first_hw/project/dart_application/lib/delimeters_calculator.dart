@@ -1,12 +1,12 @@
 /// Класс вычисления наибольшего общего делителя (НОД).
-/// 
+///
 /// [a] и [b] - натуральные числа из которых вычисляется НОД.
-/// 
+///
 ///  countLCM - функция по нахождению НОК
-/// 
+///
 ///  countGCD - функция по нахождению НОД
-/// 
-/// 
+///
+///
 
 class Calculator {
   int countLCM(int a, int b) {
@@ -47,8 +47,8 @@ class Calculator {
     return hcf;
   }
 
-  void checkNatural(number){
-    if(number <= 0){
+  void checkNatural(number) {
+    if (number <= 0) {
       throw FormatException('NumberIsNotNatural');
     }
   }

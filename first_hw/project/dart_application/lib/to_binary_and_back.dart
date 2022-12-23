@@ -2,20 +2,18 @@ import 'dart:math';
 
 class ToBinary {
   String tobinary(int a) {
-    if(a < 0){
+    if (a < 0) {
       a = a.abs();
-    } else if(a == 0){
+    } else if (a == 0) {
       return '00000000';
-    } 
+    }
     String b = '';
     while (a > 0) {
       b = (a % 2).toString() + b;
       a ~/= 2;
     }
     return (b);
-    }
-  
-
+  }
 
   int todex(String a) {
     checkValid(a);
@@ -30,12 +28,11 @@ class ToBinary {
     return sum.toInt();
   }
 
-  checkValid(a){
-    for (int i = 0; i < a.length; i++){
-      if (a[i] != '1' || a[i] != '0'){
+  checkValid(a) {
+    for (int i = 0; i < a.length; i++) {
+      if (a[i] != '1' || a[i] != '0') {
         throw FormatException('StringNotValid');
       }
     }
   }
-
 }
