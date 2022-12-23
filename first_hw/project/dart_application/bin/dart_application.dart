@@ -1,6 +1,6 @@
 import 'package:dart_application/delimeters_calculator.dart';
 import 'package:dart_application/parse_numbers.dart';
-import 'package:dart_application/user.dart';
+import 'package:dart_application/class_user.dart';
 import 'package:dart_application/to_binary_and_back.dart';
 import 'package:dart_application/find_numbers.dart';
 import 'package:dart_application/amount_words_in_string.dart';
