@@ -47,7 +47,7 @@ void main(List<String> arguments) {
       'Площадь треугольника образованного точками A(${A.x},${A.y},${A.z}, B(${B.x},${B.y},${B.z}), C(${C.x},${C.y},${C.z}) = ${C.squareOfTriangle(A, B, C)}');
 
   print('\nЗадание 7. 2**5 = 32\n');
-  num a = 32;
+  num a = 2;
   num b = 4;
   print('Корень $b степени числа $a равен: ${a.sqrtNpower(b)}');
 
