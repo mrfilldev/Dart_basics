@@ -27,17 +27,17 @@ class GeneralUser extends User {
 }
 
 class UserManager<T extends User> {
-  List users = [];
+  List<T> users = [];
 
-  void addUser(User user) {
+  void addUser(T user) {
     users.add(user);
   }
 
-  void removeUser(User user) {
+  void removeUser(T user) {
     users.remove(user);
   }
 
-  void showMailsUser() {
+  void showMailsUser(List<T> users) {
     for (int i = 0; i <= users.length; i++) {
       if (users[i].status_admin == true) {
         print(users[i].getMailSystem());

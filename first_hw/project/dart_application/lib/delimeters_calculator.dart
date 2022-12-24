@@ -4,8 +4,8 @@ class Calculator {
 
   ///  countLCM - функция по нахождению НОК
   int countLCM(int a, int b) {
-    checkNatural(a);
-    checkNatural(b);
+    _checkNatural(a);
+    _checkNatural(b);
     late int greater;
     late int lcm;
     if (a > b) {
@@ -25,8 +25,8 @@ class Calculator {
   
   ///  countGCD - функция по нахождению НОД
   int countGCD(int a, int b) {
-    checkNatural(a);
-    checkNatural(b);
+    _checkNatural(a);
+    _checkNatural(b);
     late int smaller;
     late int hcf;
     if (a > b) {
@@ -42,7 +42,7 @@ class Calculator {
     return hcf;
   }
 
-  void checkNatural(number) {
+  void _checkNatural(int number) {
     if (number <= 0) {
       throw FormatException('NumberIsNotNatural');
     }

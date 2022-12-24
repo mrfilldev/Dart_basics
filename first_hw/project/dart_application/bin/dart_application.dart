@@ -15,7 +15,7 @@ void main(List<String> arguments) {
 
   print('\nЗадание 2. 10 -> 2 && 2 -> 10\n');
   ToBinary ex2 = ToBinary();
-  print(ex2.tobinary(81));
+  print(ex2.tobinary(-81));
   print(ex2.todex('1001'));
 
   print('\nЗадание 3. Коллекция с числами из строки\n');
@@ -47,7 +47,7 @@ void main(List<String> arguments) {
       'Площадь треугольника образованного точками A(${A.x},${A.y},${A.z}, B(${B.x},${B.y},${B.z}), C(${C.x},${C.y},${C.z}) = ${C.squareOfTriangle(A, B, C)}');
 
   print('\nЗадание 7. 2**5 = 32\n');
-  num a = 2;
+  num a = 4;
   num b = 4;
   print('Корень $b степени числа $a равен: ${a.sqrtNpower(b)}');
 
