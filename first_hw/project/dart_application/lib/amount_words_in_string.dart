@@ -1,21 +1,23 @@
 /// Класс вычисления количества повторений слов в строке
 class Word1 {
   
-  /// amountWords - главный метод класса
+  
   Map amountWords(String s) {
-    RegExp punctuation = RegExp(r'[.,?:!;]');
-    var sReplaced = s.replaceAll(punctuation, '');
-    var sSplitted = sReplaced.split(' ');
+    RegExp punctuation = RegExp(r'[.,?:!;]'); // определяем регулярку для всей пунктуации
+    var sReplaced = s.replaceAll(punctuation, ''); // убираем всю пунктуацию
+    var sSplitted = sReplaced.split(' '); // разбиваем по пробелам
     return counter(sSplitted);
   }
 
-  /// counter - вспомогательный метод класса по осуществлению подсчета слов
   Map counter(List text) {
     Map answer = {};
     int i = 0;
     int quantity = 1;
     for (var word in text) {
       if (word == text[i]) {
+        /// обновление словаря;
+        /// в случае отсутствия - записываем ключ со значением 1
+        /// в случае наличия - увеличиваем на 1
         answer.update(
           word,
           (value) => value + quantity,

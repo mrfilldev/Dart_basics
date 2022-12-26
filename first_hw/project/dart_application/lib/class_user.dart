@@ -37,7 +37,7 @@ class UserManager<T extends User> {
     users.remove(user);
   }
 
-  void showMailsUser(List<T> users) {
+ /*  void showMailsUser(List<T> users) {
     for (int i = 0; i <= users.length; i++) {
       if (users[i].status_admin == true) {
         print(users[i].getMailSystem());
@@ -45,7 +45,7 @@ class UserManager<T extends User> {
         print(users[i].email);
       }
     }
-  }
+  } */
 
   void printAllUsers() {
     for (int i = 0; i < users.length; i++) {

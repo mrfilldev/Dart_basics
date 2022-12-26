@@ -19,15 +19,23 @@ class ToBinary {
   }
 
   int todex(String a) {
-    _checkValid(a);
     num sum = 0;
-    String ch = a; // 10101010 >> 2**7 + 2**5 + 2**3 + 2**1 
-    for (int i = a.length-1 ; i > -1; i--) {
-      if (ch[i] == '1') {
-        sum += pow(2, a.length - i-1);
-      }
+    num ratio = 1;
+    if (a[0] == '-'){
+      ratio = -1;
+      a = a.replaceFirst(RegExp(r'-'), '');
+    }    
+    _checkValid(a);
+    num number = 0;
+    
+    for (int i = 0; i < a.length; i ++){
+        num c = num.parse(a[i]);
+        num b = pow(2,(a.length - i -1));
+
+        number += c * b;
     }
-    return sum.toInt();
+    number *= ratio;
+    return number.toInt();
   }
 
   _checkValid(String a) {
