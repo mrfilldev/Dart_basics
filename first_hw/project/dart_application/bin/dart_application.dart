@@ -7,7 +7,9 @@ import 'package:dart_application/amount_words_in_string.dart';
 import 'package:dart_application/class_point.dart';
 import 'package:dart_application/sqrt_n_power.dart';
 
+
 void main(List<String> arguments) {
+  
   print('Задание 1. НОД и НОК\n');
   Calculator ex1 = Calculator();
   print(ex1.countGCD(10, 100));
@@ -50,13 +52,15 @@ void main(List<String> arguments) {
   num a = 100;
   num n = 45;
   print('Корень $n степени числа $a равен: ${a.sqrtNpower(a, n)}');
-
+ 
   print('\nЗадание 8. User\n');
-  User user1 = User('Ben', 30, 'first_user@gmail.com', false);
-  User user2 = User('Tom', 21, 'super_admin@gmail.com', true);
-  User user3 = User('Jane', 19, 'janeSuper_girl@rambler.com', false);
+  
 
-  UserManager user4 = UserManager();
-  AdminUser user5 = AdminUser('admin', 100, 'admin@admin.ru', true);
-  user4.addUser(user3);
+  UserManager user = UserManager();
+  print(user.email);
+  user.addEmail();
+  user.listEmails();
+  user.deleteEmail(3);
+  user.listEmails();
+
 }

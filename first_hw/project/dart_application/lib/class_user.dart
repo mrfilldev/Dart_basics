@@ -1,55 +1,52 @@
-class User {
-  late String name;
-  late int age;
-  late String email;
-  bool statusAdmin;
+abstract class User {
+  final String email;
 
-  User(this.name, this.age, this.email, this.statusAdmin);
-
-  void showFields() {
-    print(
-        'name - $name,\n age - $age,\n email - $email,\n status - $statusAdmin');
-  }
+  User(this.email);
 }
 
-mixin Email on User {
-  String getMailSystem() {
-    return email.split('@')[1];
-  }
+
+mixin GetEmail on User {
+  String get getMailSystem => email.split('@')[1];
 }
 
-class AdminUser extends User with Email {
-  AdminUser(super.name, super.age, super.email, super.statusAdmin);
+class AdminUser extends User with GetEmail {
+  AdminUser(String emailAdm) : super(emailAdm);
 }
 
 class GeneralUser extends User {
-  GeneralUser(super.name, super.age, super.email, super.statusAdmin);
+  GeneralUser(String emailUser) : super(emailUser);
 }
 
 class UserManager<T extends User> {
-  List<T> users = [];
+  final email = <String>['a.corpE.iwanaev23@work.com', 'u.KachalovV@user.com'];
 
-  void addUser(T user) {
-    users.add(user);
+  void addEmail() {
+    print('\nЭл. почта добавлена.');
+    email.add('u.Email@gmail.com');
+    email.add('u.Email2@gmail.com');
+    email.add('u.Email3@gmail.com');
+    email.add('a.corpE.worker@gmail.com');
+    email.add('a.corpE.worker@gmail.com');
+    email.add('a.corpE.worker@gmail.com');
   }
 
-  void removeUser(T user) {
-    users.remove(user);
+  void deleteEmail(int indexEmail) {
+    email.removeAt(indexEmail - 1);
+    print(
+        '\nЭл. почта ${email[indexEmail - 1]} удалена.'); //Соответствено можно было реализовать отображение почты админа или обычного пользователя
   }
-
- /*  void showMailsUser(List<T> users) {
-    for (int i = 0; i <= users.length; i++) {
-      if (users[i].status_admin == true) {
-        print(users[i].getMailSystem());
+  
+  void listEmails() {
+    print('\nСписок email:');
+    for (var i = 0; i < email.length; i++) {
+      var emails = email[i].split('E')[0];
+      if (emails == 'a.corp') {
+        print('email #${i + 1}: ${email[i].split('@')[1]}');
       } else {
-        print(users[i].email);
+        print('email #${i + 1}: ${email[i]}');
       }
-    }
-  } */
-
-  void printAllUsers() {
-    for (int i = 0; i < users.length; i++) {
-      print(users[i]);
     }
   }
 }
+
+
