@@ -2,7 +2,7 @@
 /// [a] и [b] - натуральные числа из которых вычисляется НОД.
 class Calculator {
 
-  ///  countLCM - функция по нахождению НОК
+  ///  функция по нахождению НОК
   int countLCM(int a, int b) {
     _checkNatural(a);
     _checkNatural(b);
@@ -23,7 +23,7 @@ class Calculator {
     return lcm;
   }
   
-  ///  countGCD - функция по нахождению НОД
+  ///  функция по нахождению НОД
   int countGCD(int a, int b) {
     _checkNatural(a);
     _checkNatural(b);
@@ -41,7 +41,7 @@ class Calculator {
     }
     return hcf;
   }
-
+  ///  проверка на натуральное число
   void _checkNatural(int number) {
     if (number <= 0) {
       throw FormatException('NumberIsNotNatural');
