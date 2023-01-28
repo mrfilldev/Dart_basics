@@ -19,33 +19,26 @@ class GeneralUser extends User {
 
 class UserManager<T extends User> {
   // список пользователей, в которых хранятся как пользователи, так и администраторы
-  final users = <String>['a.corpE.iwanaev23@work.com', 'u.KachalovV@user.com'];
+  final users = <T>[];
   
 
-  void addEmail() {
-    print('\nЭл. почта добавлена.');
-    users.add('u.Email@gmail.com');
-    users.add('u.Email2@gmail.com');
-    users.add('u.Email3@gmail.com'); // пользователь
-    users.add('a.corpE.worker@gmail.com'); // администратор
-    users.add('a.corpE.worker@gmail.com');
-    users.add('a.corpE.worker@gmail.com');
-  }
+  void addUser(T user) => users.add(user);
 
   void deleteEmail(int indexEmail) {
+    print(indexEmail-1);
     users.removeAt(indexEmail - 1);
-    print(
-        '\nЭл. почта ${users[indexEmail - 1]} удалена.'); //Соответствено можно было реализовать отображение почты админа или обычного пользователя
   }
   
   void listEmails() {
     print('\nСписок email:');
     for (var i = 0; i < users.length; i++) {
-      var emails = users[i].split('E')[0];
+      var emails = users[i].email.toString().split('E')[0];
+      print(emails);
+      print("!!!!!!");
       if (emails == 'a.corp') { // проверка на администратора
-        print('email #${i + 1}: ${users[i].split('@')[1]}');
+        print('email #${i + 1}: ${users[i].email.toString().split('@')[1]}');
       } else {
-        print('email #${i + 1}: ${users[i]}');
+        print('email #${i + 1}: ${users[i].email.toString()}');
       }
     }
   }

@@ -49,18 +49,33 @@ void main(List<String> arguments) {
       'Площадь треугольника образованного точками A(${A.x},${A.y},${A.z}, B(${B.x},${B.y},${B.z}), C(${C.x},${C.y},${C.z}) = ${C.squareOfTriangle(A, B, C)}');
 
   print('\nЗадание 7. 2**5 = 32\n');
-  num a = 100;
-  num n = 45;
+  num a = 32;
+  num n = 2;
   print('Корень $n степени числа $a равен: ${a.sqrtNpower(a, n)}');
  
   print('\nЗадание 8. User\n');
   
 
-  UserManager user = UserManager();
-  print(user.email);
-  user.addEmail();
-  user.listEmails();
-  user.deleteEmail(3);
-  user.listEmails();
+  var admin = AdminUser('a.corpE.worker@gmail.com');
+  var user1 = GeneralUser('u1.Email@gmail.com');
+  var user2 = GeneralUser('u2.Email@gmail.com');
+  var user3 = GeneralUser('u3.Email@gmail.com');
+  var user4 = GeneralUser('u4.Email@gmail.com');
+  var user5 = GeneralUser('u5.Email@gmail.com');
+
+
+  var userManager = UserManager();
+  userManager.addUser(user1);
+  userManager.addUser(user2);
+  userManager.addUser(user3);
+  userManager.addUser(admin);
+  userManager.addUser(user4);
+  userManager.addUser(user5);
+  
+  print('До удаления');
+  userManager.listEmails();
+  userManager.deleteEmail(1);
+  print('После удаления');
+  userManager.listEmails();
 
 }
